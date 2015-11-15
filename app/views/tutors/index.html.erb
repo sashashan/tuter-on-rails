@@ -1,0 +1,21 @@
+<h1>Listing Tutors</h1>
+<%= link_to 'New tutor', new_tutor_path %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @tutors.each do |tutor| %>
+    <tr>
+      <td><%= tutor.title %></td>
+      <td><%= tutor.text %></td>
+      <td><%= link_to 'Show', tutor_path(tutor) %></td>
+      <td><%= link_to 'Edit', edit_tutor_path(tutor) %></td>
+      <td><%= link_to 'Destroy', tutor_path(tutor),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>

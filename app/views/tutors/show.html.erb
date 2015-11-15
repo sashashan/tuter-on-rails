@@ -1,0 +1,17 @@
+<p>
+  <strong>Title:</strong>
+  <%= @tutor.title %>
+</p>
+ 
+<p>
+  <strong>Text:</strong>
+  <%= @tutor.text %>
+</p>
+
+<h2>Comments</h2>
+<%= render @tutor.comments %>
+ 
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Back', tutors_path %>
